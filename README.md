@@ -7,3 +7,5 @@ You can simply use source_url from package devtools.
 library(devtools)
 source_url("https://raw.githubusercontent.com/Wei-Kuang/R/main/filename.R")
 ```
+
+<img src="image/densityplot_example.png" height="380"> 
