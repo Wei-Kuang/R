@@ -2,6 +2,10 @@
 
 This folder contains my R codes to do modeling and data visualization.
 
+**Plotting functions**
+- f_densityplot_cont_by_cate
+- f_boxplot
+
 You can simply use source_url from package devtools. 
 ``` R
 library(devtools)
