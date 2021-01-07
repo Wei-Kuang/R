@@ -1,3 +1,7 @@
 # R
 
- This folder contains my R codes to do modeling and data visualization.
+This folder contains my R codes to do modeling and data visualization.
+You can simply use source_url from package devtools. 
+``` R
+source_url("https://raw.githubusercontent.com/Wei-Kuang/R/main/Plot_BoxDensity.R")
+```
