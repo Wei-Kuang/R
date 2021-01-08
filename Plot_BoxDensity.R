@@ -24,7 +24,7 @@ fun_remove_missming= function (dataframe, var1){
   )
   
   #### Remove
-  out = dataframe %>% dplyr::dplyr::filter_( criteria)
+  out = dataframe %>% dplyr::filter_( criteria)
   #### Drop level ( if the var1 is a factor) !!!!!
   if (  class(out[[var1]] ) =='factor'  ) {
     out[[var1]] = droplevels(  out[[var1]] )
