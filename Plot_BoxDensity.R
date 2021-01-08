@@ -24,7 +24,7 @@ fun_remove_missming= function (dataframe, var1){
   )
   
   #### Remove
-  out = dataframe %>% filter_( criteria)
+  out = dataframe %>% dplyr::dplyr::filter_( criteria)
   #### Drop level ( if the var1 is a factor) !!!!!
   if (  class(out[[var1]] ) =='factor'  ) {
     out[[var1]] = droplevels(  out[[var1]] )
@@ -273,9 +273,12 @@ f_densityplot_cont_by_cate = function(
 f_boxplot = function(df_input, 
                      cate.var.arg, 
                      cont.var.arg,
-                     y.limit.arg , y.breaks.arg,
-                     xlab.arg, ylab.arg,
-                     title.arg, theme.arg= My_Theme_1,
+                     y.limit.arg , 
+                     y.breaks.arg,
+                     xlab.arg, 
+                     ylab.arg,
+                     title.arg, 
+                     theme.arg= My_Theme_1,
                      round.digit.arg =2){
   
   #### prepare the variables
