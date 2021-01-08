@@ -194,7 +194,9 @@ f_densityplot_cont_by_cate = function(
   ## Zissou tone
   require("wesanderson")
   col_pal <- wes_palette("Zissou1", n = col.n , type = "continuous") 
-  if ( !is.null(col_pal.arg)) {col_pal=col_pal.arg }
+  if ( !is.null(col_pal.arg) ) {
+    col_pal=col_pal.arg 
+    }
   
   #### statistics ####
   # N.M table
@@ -270,16 +272,8 @@ f_densityplot_cont_by_cate = function(
 ##################
 
 #### function ####
-f_boxplot = function(df_input, 
-                     cate.var.arg, 
-                     cont.var.arg,
-                     y.limit.arg , 
-                     y.breaks.arg,
-                     xlab.arg, 
-                     ylab.arg,
-                     title.arg, 
-                     theme.arg= My_Theme_1,
-                     round.digit.arg =2){
+f_boxplot = function(df_input, cate.var.arg, cont.var.arg, y.limit.arg, y.breaks.arg, 
+                     xlab.arg= '', ylab.arg='', title.arg='', theme.arg= My_Theme_1, round.digit.arg =2) {
   
   #### prepare the variables
   cate.var  = cate.var.arg
@@ -310,18 +304,24 @@ f_boxplot = function(df_input,
   
   
   #### color ####
+  require(RColorBrewer)
   col.n = unique(df_input[[cate.var]]) %>% length()
   #col_pal = palette(gray.colors(n = col.n, start = 0.9, end = 0.3,alpha = 0.8))
-  require(RColorBrewer)
-  col_pal <- brewer.pal(n=col.n, "Blues")
+ 
+  if ( col.n == 2){
+    col_pal = c('azure2', 'lightblue2')
+  }else{
+    col_pal <- brewer.pal(n=col.n, 'Blues') # minimum 3
+  }
+  
   
   #### claculate p-vale ####
-  p_vale = f_anova(Y.arg = cont.var, X.arg = cate.var,data.arg = df_input )
+  p_vale = f_anova(Y.arg = cont.var, X.arg = cate.var, data.arg = df_input )
   grob <- grid::grobTree(textGrob(label = p_vale, x=0.05,  y=0.97, hjust=0,
-                                  gp=gpar(col="darkred", fontsize=10, fontface="italic")))
+                                  gp=gpar(col='darkred', fontsize=10, fontface='italic')))
   
   #### Plot ####
-  p= ggplot(data = df_input, aes_string(x=cate.var ,y=cont.var)) +
+  p= ggplot(data = df_input, aes_string(x=cate.var, y=cont.var)) +
     #geom_violin(fill='grey') +
     geom_boxplot(alpha =0.5, fill= col_pal , width=0.9)+
     geom_text(data = df_Stat, 
@@ -338,17 +338,19 @@ f_boxplot = function(df_input,
     theme_bw()+ 
     theme(panel.grid.major = element_blank(), 
           panel.grid.minor =element_blank(),
-          legend.position="right") +  theme.arg  
+          legend.position='right') +  
+    theme.arg  
   
   
   print(p)
   return(df_Stat)
   # Save
   # save plot to a specific folder
-  # dir.create("output_Plot") # create a folder
+  # dir.create('output_Plot') # create a folder
   # filename = paste(X,Y,'.png',sep = '_')
-  # ggsave(filename = filename, plot= p , width = 10, height = 10, units = "cm")
-}
+  # ggsave(filename = filename, plot= p , width = 10, height = 10, units = 'cm')
+  
+  }
 
 
 ####  example ####
