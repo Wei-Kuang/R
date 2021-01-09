@@ -11,7 +11,7 @@ library('grid')
 
 
 ####################################################
-#### functoin-0 Remove any NA/'Missing'/DK/9999 ####
+#### function-0 Remove any NA/'Missing'/DK/9999 ####
 ####################################################
 fun_remove_missming= function (dataframe, var1){
   require("lazyeval")
@@ -44,7 +44,7 @@ fun_remove_missming(DF_testing, var1 = 'X')
 
 
 ####################################
-#### functino - p_val_converter ####
+#### function - p_val_converter ####
 ####################################
 
 
@@ -112,7 +112,7 @@ p_val_converter (0.000019)
 
 
 #########################
-#### anova function} ####
+#### anova function  ####
 #########################
 f_anova =function(Y.arg, X.arg, data.arg){
   Y=Y.arg
