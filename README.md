@@ -14,6 +14,7 @@ source_url("https://raw.githubusercontent.com/Wei-Kuang/R/main/Plot_BoxDensity.R
 
 ## f_densityplot_cont_by_cate
 ### Generate density plot for a continuous  variable grouped by a categorical variable.
+<img src="image/densityplot_example.png" height="380"> 
 ```R
 #### Load iris data from ggplot2 package
 library(ggplot2)
@@ -111,11 +112,12 @@ result
 # 2 versicolor  4.26   4.35 0.470    50 versicolor N=50
 # 3 virginica   5.55   5.55 0.552    50 virginica N=50
 ```
-<img src="image/densityplot_example.png" height="380"> 
+
 
 
 
 ## f_boxplot
+<img src="image/boxplot_example.png" height="380"> 
 ```R
 #### Load iris data from ggplot2 package
 library(ggplot2)
@@ -174,4 +176,4 @@ result
 # 2 versicolor  4.26   4.35 0.470    50 "versicolor\n N=50"
 # 3 virginica   5.55   5.55 0.552    50 "virginica\n N=50"
 ```
-<img src="image/boxplot_example.png" height="380"> 
+
