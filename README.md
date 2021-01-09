@@ -14,7 +14,9 @@ source_url("https://raw.githubusercontent.com/Wei-Kuang/R/main/Plot_BoxDensity.R
 
 ## f_densityplot_cont_by_cate
 ### Generate density plot for a continuous  variable grouped by a categorical variable.
+
 <img src="image/densityplot_example.png" height="380"> 
+
 ```R
 #### Load iris data from ggplot2 package
 library(ggplot2)
@@ -117,7 +119,9 @@ result
 
 
 ## f_boxplot
+
 <img src="image/boxplot_example.png" height="380"> 
+
 ```R
 #### Load iris data from ggplot2 package
 library(ggplot2)
