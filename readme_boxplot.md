@@ -71,6 +71,3 @@ result
 # 2 versicolor  4.26   4.35 0.470    50 "versicolor\n N=50"
 # 3 virginica   5.55   5.55 0.552    50 "virginica\n N=50"
 ```
-
-## Barplot
-[a link](https://github.com/Wei-Kuang/R/blob/main/bar_plot_readme.md)
