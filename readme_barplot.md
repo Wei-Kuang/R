@@ -1,10 +1,9 @@
 
-# R
+# This function is under construction
 
-This is the intro to explain how to use "f_bar_plot" to creat bar plot
 
 **Plotting functions**
-- f_bar plot
+- f_barplot_onevar
 
 
 ## Example
