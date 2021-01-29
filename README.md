@@ -181,3 +181,5 @@ result
 # 3 virginica   5.55   5.55 0.552    50 "virginica\n N=50"
 ```
 
+## Barplot
+[a link](https://github.com/Wei-Kuang/R/blob/main/bar_plot_readme.md)
