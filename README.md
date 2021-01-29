@@ -5,7 +5,7 @@ This folder contains my R codes to do modeling and data visualization.
 **Plotting functions**
 - f_densityplot_cont_by_cate
 - f_boxplot
-- [f_barplot_onevar] (https://github.com/Wei-Kuang/R/blob/main/readme_barplot.md)
+- [f_barplot_onevar](https://github.com/Wei-Kuang/R/blob/main/readme_barplot.md)
 
 
 You can simply use source_url from package devtools. 
@@ -184,4 +184,4 @@ result
 ```
 
 ## Barplot
-[a link](https://github.com/Wei-Kuang/R/blob/main/bar_plot_readme.md)
+[a linkvfg](https://github.com/Wei-Kuang/R/blob/main/bar_plot_readme.md)
