@@ -100,7 +100,7 @@ f_barplot_onevar= function(data.arg, var_target,
   #### Plot ####
   p1 = merge_df %>% 
     ggplot(aes_string(x='label_x', y='Percentage'))+ 
-    geom_bar(stat= 'identity')+  
+    geom_bar(stat= 'identity', fill= 'gray70')+  
     ggtitle( my_title )+ xlab( '' )+ ylab('Percentage')+  
     #### Final adjustment
     scale_y_continuous(limits = y.limits.arg ,breaks= y.breaks.arg )+
