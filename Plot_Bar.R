@@ -63,7 +63,7 @@ f_barplot_onevar= function(data.arg, var_target,
   
   
   #### Sample size computation
-  dfy = df  %>% summarize( Count.y =n())
+  dfy = df  %>% dplyr::summarize( Count.y =n())
   dfy$label_y = dfy[,'Count.y']
   
   dfx = df %>% 
@@ -196,7 +196,7 @@ f_composition_plot = function(data.arg, var_target, var_group, col_pal.arg=NULL,
     
   #### Color ####
   # color setting
-  cn = df %>% select(var_target)  %>% pull() %>% unique() %>% length()  # cn: color number
+  cn = df %>% dplyr::select(var_target)  %>% pull() %>% unique() %>% length()  # cn: color number
   col_pal <- wes_palette("Zissou1", cn , type = "continuous") 
     
   if ( !is.null(col_pal.arg)) {
@@ -368,25 +368,25 @@ Missing_plot = function(data.arg, var_target, var_group, note='', my_legend_titl
 #################
 
 
-#### Load iris data from ggplot2 package
-library(ggplot2)
-head(iris)
-DF = iris
-str(DF) # Note: Species is already a factor. 
-table(DF$Species) 
-
-
-#### Example-1 ####
-f_barplot_onevar(data.arg = DF,
-                 var_target = 'Species',
-                 y.limits.arg = c(0,100),
-                 y.breaks.arg = seq(0,100,20),
-                 coord_flip.arg = F)
-
-
-#### Example-2 ####
-f_barplot_onevar(data.arg = DF,
-                 var_target = 'Species',
-                 y.limits.arg = c(0,100),
-                 y.breaks.arg = seq(0,100,20),
-                 coord_flip.arg = T)
+# #### Load iris data from ggplot2 package
+# library(ggplot2)
+# head(iris)
+# DF = iris
+# str(DF) # Note: Species is already a factor. 
+# table(DF$Species) 
+# 
+# 
+# #### Example-1 ####
+# f_barplot_onevar(data.arg = DF,
+#                  var_target = 'Species',
+#                  y.limits.arg = c(0,100),
+#                  y.breaks.arg = seq(0,100,20),
+#                  coord_flip.arg = F)
+# 
+# 
+# #### Example-2 ####
+# f_barplot_onevar(data.arg = DF,
+#                  var_target = 'Species',
+#                  y.limits.arg = c(0,100),
+#                  y.breaks.arg = seq(0,100,20),
+#                  coord_flip.arg = T)
