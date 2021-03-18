@@ -11,7 +11,20 @@ library('devtools')
 source_url("https://raw.githubusercontent.com/Wei-Kuang/R/main/LinearRegression.R")
 ```
 
-#### Example
+#### Example of simple regression and scatterplot
+```
+library(datasets)
+data(iris)
+summary(iris)
+
+f_scatter_plot(input_data =iris, 
+                var_x.arg= 'Sepal.Width', 
+                var_y.arg ='Petal.Length',  
+                x.limit.arg = c(0,10), x.breaks.arg =seq(0,10,2),
+                y.limit.arg = c(0,10), y.breaks.arg =seq(0,10,2))
+```
+
+#### Example of multiple regression
 ```
 library(datasets)
 data(iris)
