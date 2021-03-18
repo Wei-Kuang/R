@@ -64,13 +64,13 @@ Report_df = full_join(x =N_df ,y=Coef_df, by= c('key'='term'))
 
 Report_df %>% select(-key)
 #      Variable     Levels   N   estimate  std_error statistic  p_value          CI95
-#1 Sepal.Length            150         NA         NA        NA       NA          <NA>
-#2      Species     setosa  50         NA         NA        NA       NA          <NA>
-#3      Species versicolor  50 -0.9558123 0.21519853 -4.441537 1.76e-05 -1.38 - -0.53
+#1 Sepal.Length            150         NA         NA        NA       NA          <NA> <The outcome-Y>
+#2      Species     setosa  50         NA         NA        NA       NA          <NA>  
+#3      Species versicolor  50 -0.9558123 0.21519853 -4.441537 1.76e-05 -1.38 - -0.53  
 #4      Species  virginica  50 -1.3940979 0.28566053 -4.880261 2.76e-06 -1.96 - -0.83
 #5  Sepal.Width            150  0.4322172 0.08138982  5.310458 4.00e-07   0.27 - 0.59
 #6 Petal.Length            150  0.7756295 0.06424566 12.072869 0.00e+00    0.65 - 0.9
-#7         <NA>       <NA>  NA  2.3903891 0.26226815  9.114294 0.00e+00   1.87 - 2.91
+#7         <NA>       <NA>  NA  2.3903891 0.26226815  9.114294 0.00e+00   1.87 - 2.91  <Note: intercept>
 
 # Model quality
 get_regression_summaries(mymodel)
