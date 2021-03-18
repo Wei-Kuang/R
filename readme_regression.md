@@ -40,10 +40,7 @@ Coef_df =  moderndive::get_regression_table(mymodel,digits=8) %>%
 
 
 Report_df = full_join(x =N_df ,y=Coef_df, by= c('key'='term')) 
-Report_df %>% select(-key)
 
-# Model quality
-get_regression_summaries(mymodel)
 
 Report_df %>% select(-key)
 #      Variable     Levels   N   estimate  std_error statistic  p_value          CI95
