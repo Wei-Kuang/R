@@ -63,7 +63,10 @@ f_scatter_plot = function(input_data, var_x.arg , var_y.arg,
 
 # example:  f_scatter_plot(input_data = DF, var_x.arg= var, var_y.arg ='r_TS') 
 
+
+######################################
 #### function to get the lm model ####
+######################################
 df_input= DF
 var_outcome = 'well_score_9dom_well0'
 var_x = 'core_gender_well0'
@@ -71,7 +74,7 @@ var_covar = c('portal_age_well0', 'dv_edu_3cat_well0')
 
 f_linear_model = function(df_input.arg , var_outcome.arg,  var_x.arg, var_covar.arg) {
   
-  #### Prepare vairables
+  #### Prepare variables
   df_input       = df_input.arg
   var_outcome    = var_outcome.arg
   var_x          = var_x.arg
@@ -104,7 +107,9 @@ f_linear_model = function(df_input.arg , var_outcome.arg,  var_x.arg, var_covar.
 
 
 
+#######################################
 #### LM function-1 sample_size_glm ####
+#######################################
 
 f_size_lm = function(model.arg , var_outcome.arg){
   #### Prepare the variable
@@ -154,3 +159,40 @@ f_size_lm = function(model.arg , var_outcome.arg){
 #### Example
 # N_df = f_size_lm(model.arg = mymodel, var_outcome.arg = 'well_score_9dom_well0' )
 
+
+
+############################################################
+#### Example of the pipe line to do multiple regression ####
+############################################################
+
+library(datasets)
+data(iris)
+summary(iris)
+
+# Setting
+df_input= iris
+var_outcome = 'Sepal.Length'
+var_x = 'Species' # This is the empty place for the variable that we want to investigate
+
+var_covar = c('Sepal.Width', 'Petal.Length') # These are the covariates
+
+# Get Model
+mymodel = f_linear_model(df_input.arg=df_input,
+                         var_outcome.arg = var_outcome, 
+                         var_x.arg = var_x, 
+                         var_covar.arg = var_covar)
+# Get N 
+N_df = f_size_lm(model.arg = mymodel, var_outcome.arg = var_outcome )
+N_df
+
+# Get the Coef
+Coef_df =  moderndive::get_regression_table(mymodel,digits=8) %>%
+  mutate( CI95 = paste0( round(lower_ci,2),' - ',round(upper_ci,2) ) ) %>%
+  dplyr::select( - c(lower_ci, upper_ci))
+
+
+Report_df = full_join(x =N_df ,y=Coef_df, by= c('key'='term')) 
+Report_df %>% select(-key)
+
+# Model quality
+get_regression_summaries(mymodel)
