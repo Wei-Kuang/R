@@ -7,6 +7,9 @@
 
 
 ## Example
+
+<img src="image/barplot_example.png" height="380"> 
+
 ```R
 #### Load iris data from ggplot2 package
 library(ggplot2)
