@@ -26,8 +26,9 @@ f_scatter_plot(input_data =iris,
                 x.limit.arg = c(0,10), x.breaks.arg =seq(0,10,2),
                 y.limit.arg = c(0,10), y.breaks.arg =seq(0,10,2))
 ```
-
-
+ 
+\n
+\n
 
 #### Example of multiple regression
 ```
