@@ -12,7 +12,7 @@ source_url("https://raw.githubusercontent.com/Wei-Kuang/R/main/LinearRegression.
 ```
 
 #### Example - simple regression and scatterplot
-<img src="image/scatterplot_example.png" height="200"> 
+<img src="image/scatterplot_example.png" height="250"> 
 
 ```R
 library(datasets)
