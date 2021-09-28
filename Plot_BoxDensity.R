@@ -310,8 +310,10 @@ f_boxplot = function(df_input, cate.var.arg, cont.var.arg, y.limit.arg, y.breaks
  
   if ( col.n == 2){
     col_pal = c('azure2', 'lightblue2')
+  }else if(col.n <= 9){
+    col_pal <- brewer.pal(n=col.n, 'Blues') # minimum 3 | max 9
   }else{
-    col_pal <- brewer.pal(n=col.n, 'Blues') # minimum 3
+    col_pal = rep('gray', col.n)
   }
   
   
